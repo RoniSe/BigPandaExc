@@ -1,0 +1,13 @@
+New log file opened at Tue Jun 21 20:35:09 IDT 2016 by 3924@DESKTOP-NHTVPA8
+Taking next connection to: 54859
+New client attempting to connect on port: 54860-54859
+  Address = /10.0.0.3:54859
+This client on port 54860 has uuid 66607514-bc7c-46f4-a1f5-24d7d61f1d5b configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-66607514-bc7c-46f4-a1f5-24d7d61f1d5b
+Taking next connection to: 54859
+Checking to see if clients are empty...
+No non-daemon clients connected after 3 min. Shutting down.
+Server socket thread exiting.
+0 clients open, will close them...
+All client sockets have been closed.
+Closing the 3924@DESKTOP-NHTVPA8 logs at Tue Jun 21 20:38:12 IDT 2016, goodbye.

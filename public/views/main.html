@@ -1,0 +1,42 @@
+<html>
+<script type="text/javascript" src="assets/sources/js/jquery-2.2.2.js"></script>
+<script type="text/javascript" src="assets/sources/js/angular.js"></script>
+<script type="text/javascript" src="assets/sources/js/bootstrap.js"></script>
+<link rel="stylesheet" href="assets/sources/css/bootstrap.css">
+
+<script type="text/javascript" src="assets/javascripts/main.js"></script>
+<link rel="stylesheet" href="assets/stylesheets/main.css">
+
+<body class="row  row-centered" ng-app="feedApp" >
+    <div id="container" class="col-md-3 col-sm-5 col-xs-8 col-lg-3  col-centered" ng-controller="feedCtrl">
+        <div id="input" class="row">
+            <form name="messageInput">
+                <div class="form-group innerComp">
+                    <input type="email" name="emaile" class="form-control" id="emailInput" placeholder="Email" ng-model="email" required>
+                </div>
+                <div class="form-group innerComp">
+                    <textarea class="form-control" name="content" rows="3" id='messageInput' placeholder="Message" ng-model="message" required></textarea>
+                </div>
+            </form>
+            <div class="text-right innerComp">
+                <button id='submitBtn' type="button" class="btn btn-primary" ng-click="sendMsg()" ng-disabled="messageInput.$invalid">submit</button>
+            </div>
+        </div>
+        <div id="messagesContainer" class="innerComp" ng-init="loadMessages()">
+            <div class="form-group  has-feedback ">
+                <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                <input type="text" class="form-control" id="filter" placeholder="filter" ng-model="filterTxt" required>
+
+            </div>
+            <div id="messages" ng-repeat="msg in allMessages | filter:filterTxt">
+                <img id="img" src='http://www.gravatar.com/avatar/' + md5({{msg.email}}) />
+                <div id="mailAndData">
+                    <div id="email">{{msg.email}}</div>
+                    <div id="content">{{msg.content}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
